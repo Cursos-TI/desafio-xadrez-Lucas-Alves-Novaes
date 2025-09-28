@@ -1,33 +1,50 @@
 #include <stdio.h>
 
+void moverTorre(int casas){
+    if(casas > 0){
+        printf("Direita\n");
+        moverTorre(casas - 1);
+    }
+}
+
+void moverBispo(int casas){
+    if(casas > 0){
+        printf("Cima Direita\n");
+        moverBispo(casas - 1);
+    }
+}
+
+void moverRainha(int casas){
+    if(casas > 0){
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
 int main() {
     int movimento;
-    int bispo = 1;
-    int rainha = 1;
+  
 
     printf("\n*** Jogo de Xadrez ***\n");
     printf("\nTorre\n");
-    
-        for (int torre = 1; torre <= 5; torre++) {  // Loop para mover a torre 5 vezes
-            printf("Cima\n");
-        }
+    moverTorre(5);  // Chama a função recursiva para mover a torre 5 vezes
+        
 
     printf("\nBispo\n");  
+    moverBispo(5);  // Chama a função recursiva para mover o bispo 5 vezes    
     
-        do  // Loop para mover o bispo 5 vezes      
-        {
-            printf("Cima Direita\n");
-            bispo++;
-        } while (bispo <= 5);  
-
     printf("\nRainha\n");  
+    moverRainha(8);  // Chama a função recursiva para mover a rainha 5 vezes
+    
+    printf("\nCavalo\n");  
 
-        while (rainha <= 8)  // Loop para mover a rainha 8 vezes
-        {
-           printf("Esquerda\n");
-           rainha++;
+        for (int i = 1; i <= 1; i++) {  // Loop para mover o cavalo 1 vez para direita
+            for (int k = 0; k <= 1; k++) { // Loope para mover o cavalo 2 vezes para cima
+                printf("Cima\n");
+                
+            }
+            printf("Direita\n");
         }
-        
         
     return 0;
 }
